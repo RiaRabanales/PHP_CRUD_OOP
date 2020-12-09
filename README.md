@@ -1,5 +1,11 @@
 # Repositorio:
+https://github.com/RiaRabanales/PHP_CRUD_OOP
 
+# Servidor remoto:
+rabanales.sytes.net/examen
+No obstante, por problemas con la conexión a la base de datos no ha sido posible realizar el despliegue completo.
+Por tanto, para ver bien este proyecto es necesario tener la configuración apropiada a una base de datos local con el nombre y contraseña correctos en el archivo config/database.php
+(En la versión de github se incluye una reversión de los míos personales.)
 
 ## 1.
 Para que en este código figure el símbolo '$' a la izquierda del precio (en el listado de productos y en el detalle) simplemente he tenido que añadir el símbolo apropiado al string que corresponde.

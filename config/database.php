@@ -4,8 +4,8 @@ class Database{
     // Aquí los datos de mi base de datos:
     private $host = "localhost";
     private $db_name = "php_oop_crud_level_1";
-    private $username = "riarabanales";
-    private $password = "alualualu";
+    private $username = "root";
+    private $password = "";
     public $conn;
   
     // Método para tomar la conexión

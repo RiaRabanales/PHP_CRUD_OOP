@@ -38,7 +38,7 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
 
     echo "<tr>";
         echo "<td>Precio</td>";
-        //echo "<td>${$product->price}</td>";
+        echo "<td>\${$product->price}</td>";
     echo "</tr>";
 
     echo "<tr>";

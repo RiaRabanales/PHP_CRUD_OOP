@@ -212,7 +212,7 @@ class Product {
             // compruebo que sea una imagen real...
             $check = getimagesize($_FILES["image"]["tmp_name"]);
             if ($check !== false) {
-                // submitted file is an imageno hago nada porque efectivamente es una imagen
+                // no hago nada porque efectivamente es una imagen
             } else {
                 $file_upload_error_messages .= "<div>El archivo no es una imagen.</div>";
             }

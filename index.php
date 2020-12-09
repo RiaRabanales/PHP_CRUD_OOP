@@ -1,6 +1,5 @@
 <?php
 // Página principal de mi aplicación; ver tutorial en https://codeofaninja.com/2014/06/php-object-oriented-crud-example-oop.html
-// TODO error en lectura de 1
 // Incluyo core, con mis variables de paginación:
 include_once 'config/core.php';
 

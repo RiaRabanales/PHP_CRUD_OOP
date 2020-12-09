@@ -26,7 +26,7 @@ if ($_POST) {
     $product->price = $_POST['price'];
     $product->description = $_POST['description'];
     $product->category_id = $_POST['category_id'];
-    // Nota: ¿por qué hago directamente el insert de la imagen antes de verificar? ¿No debería ser al revés?
+    // Nota: ¿por qué hace directamente el insert de la imagen antes de verificar? ¿No debería ser al revés?
     $image = !empty($_FILES["image"]["name"]) ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"]) : "";
     $product->image = $image;
 
@@ -84,7 +84,7 @@ if ($_POST) {
         </tr>
 
         <tr>
-            <td>Photo</td>
+            <td>Foto</td>
             <td><input type="file" name="image" /></td>
         </tr>
 

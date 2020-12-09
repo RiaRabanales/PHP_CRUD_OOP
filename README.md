@@ -2,8 +2,8 @@
 https://github.com/RiaRabanales/PHP_CRUD_OOP
 
 # Servidor remoto:
-rabanales.sytes.net/examen
-No obstante, por problemas con la conexión a la base de datos no ha sido posible realizar el despliegue completo.
+> En: rabanales.sytes.net/examen
+No obstante, por problemas con la conexión a la base de datos no ha sido posible realizar el despliegue completo: se ha cargado bien el proyecto pero no se carga la base de datos, por lo que no se pueden generar bien las tablas.
 Por tanto, para ver bien este proyecto es necesario tener la configuración apropiada a una base de datos local con el nombre y contraseña correctos en el archivo config/database.php
 (En la versión de github se incluye una reversión de los míos personales.)
 

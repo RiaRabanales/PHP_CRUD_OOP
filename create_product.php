@@ -26,15 +26,15 @@ if ($_POST) {
     $product->price = $_POST['price'];
     $product->description = $_POST['description'];
     $product->category_id = $_POST['category_id'];
-    // Nota: ¿por qué hace directamente el insert de la imagen antes de verificar? ¿No debería ser al revés?
+    // Nota: ¿por qué hace directamente el insert de la imagen antes de verificar? ¿No debería ser al revés? Ver líneas 33ss.
     $image = !empty($_FILES["image"]["name"]) ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"]) : "";
     $product->image = $image;
 
     // creo el producto, y si no puedo se lo digo al usuario
     if ($product->create()) {
-        echo "<div class='alert alert-success'>Producto creado.</div>";
         // con esto manejo la imagen; el método está en producto
         echo $product->uploadPhoto();
+        echo "<div class='alert alert-success'>Producto creado.</div>";
     } else {
         echo "<div class='alert alert-danger'>Imposible crear producto.</div>";
     }

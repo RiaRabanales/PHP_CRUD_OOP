@@ -73,4 +73,23 @@ Si la imagen no está vacía intento subirla en un directorio llamado 'uploads' 
 
         Y por último se hace return, lo que devuelve la variable $result_message que contiene el mensaje generado durante todo este proceso.
 
-## 3.
+## 3. 
+En el código original el script permite incluir una imagen del producto, pero no actualizarla.
+Para poder actualizarla lo primero que hago es ir al archivo update_product.php. En la línea 36 (y siguiendo el ejemplo de la creación) añado:
+$image = !empty($_FILES["image"]["name"]) ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"]) : "";
+$product->image = $image;
+
+Como es apropiado realizar todas las comprobaciones que he mencionado en el apartado anterior añado también lo siguiente:
+
+if ($product->update()) {
+    echo $product->uploadPhoto();
+    [...]
+
+A continuación lo que debo hacer es añadir una fila más al formulario, para poder actualizar la imagen. Esto lo creo a partir de la nueva línea 99 con el siguiente fragmento:
+
+    <tr>
+        <td>Foto</td>
+        <td><input type='file' name='image' value='<?php echo $product->image; ?>' class='form-control' /></td>
+    </tr>
+
+Y con estos cambios, ya puedo actualizar la foto.

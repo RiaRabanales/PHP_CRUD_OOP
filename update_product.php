@@ -33,9 +33,12 @@ if ($_POST) {
     $product->price = $_POST['price'];
     $product->description = $_POST['description'];
     $product->category_id = $_POST['category_id'];
+    $image = !empty($_FILES["image"]["name"]) ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"]) : "";
+    $product->image = $image;
 
-    // Informo si lo hago o no
+    // Informo si lo hago o no:
     if ($product->update()) {
+        echo $product->uploadPhoto();
         echo "<div class='alert alert-success alert-dismissable'>";
         echo "El producto se ha actualizado.";
         echo "</div>";
@@ -92,6 +95,11 @@ if ($_POST) {
                 echo "</select>";
                 ?>
             </td>
+        </tr>
+        
+        <tr>
+            <td>Foto</td>
+            <td><input type='file' name='image' value='<?php echo $product->image; ?>' class='form-control' /></td>
         </tr>
 
         <tr>
